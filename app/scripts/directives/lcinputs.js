@@ -24,14 +24,22 @@ angular.module('inputsApp')
           focus: true
         };
 
+        scope.onKeyPress = function ( $event ) {
+          console.log('$event', $event);
+          if( $event.key === 'Backspace' ) {
+            if( scope.newInput.model === null || scope.newInput.model.length === 0 )
+            scope.options.inputs.pop();
+          }
+        };
+
         scope.deleteInput = function ( $index ) {
          scope.options.inputs.splice($index, 1);
         };
 
         scope.$watch('newInput.model', function ( newValue ) {
-          if( newValue.substr(newValue.length - 1, 1) === scope.options.breakPoint ) {
+          if(newValue !== null && newValue.substr(newValue.length - 1, 1) === scope.options.breakPoint ) {
             scope.options.inputs.push(newValue.substr(0,newValue.length - 1));
-            scope.newInput.model = '';
+            scope.newInput.model = null;
           }
         });
 
