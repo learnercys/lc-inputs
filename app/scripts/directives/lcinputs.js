@@ -25,7 +25,6 @@ angular.module('inputsApp')
         };
 
         scope.onKeyPress = function ( $event ) {
-          console.log('$event', $event);
           if( $event.key === 'Backspace' ) {
             if( scope.newInput.model === null || scope.newInput.model.length === 0 )
             scope.options.inputs.pop();
