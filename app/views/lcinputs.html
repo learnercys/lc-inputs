@@ -1,3 +1,11 @@
 <div class="lc-inputs">
-  <div class="box"></div>
+  <div class="box">
+    <div class="input" ng-repeat="input in options.inputs">
+      <span ng-bind="input"></span>
+    </div>
+    <textarea
+      class="new-input"
+      ng-model="newInput.model"
+      ng-style="{width:newInput.width + 'px', height:newInput.height + 'px'}"></textarea>
+  </div>
 </div>

@@ -10,6 +10,7 @@
 angular.module('inputsApp')
   .controller('MainCtrl', function ($scope) {
     $scope.options = {
-      breakPoint: ','
+      breakPoint: ',',
+      inputs: []
     };
   });
