@@ -20,7 +20,12 @@ angular.module('inputsApp')
         scope.newInput = {
           model: '',
           width: 100,
-          height: 20
+          height: 20,
+          focus: true
+        };
+
+        scope.deleteInput = function ( $index ) {
+         scope.options.inputs.splice($index, 1);
         };
 
         scope.$watch('newInput.model', function ( newValue ) {

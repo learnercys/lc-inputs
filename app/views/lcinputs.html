@@ -2,6 +2,7 @@
   <div class="box">
     <div class="input" ng-repeat="input in options.inputs">
       <span ng-bind="input"></span>
+      <i ng-click="deleteInput($index)" class="glyphicon glyphicon-remove"></i>
     </div>
     <textarea
       class="new-input"
